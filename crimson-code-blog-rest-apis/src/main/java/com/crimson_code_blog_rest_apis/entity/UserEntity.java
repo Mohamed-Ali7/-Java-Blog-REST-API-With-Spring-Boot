@@ -14,6 +14,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -46,7 +47,7 @@ public class UserEntity {
 	private String emailVerificationToken;
 
 	@Column(name = "is_user_verified", nullable = false)
-	private boolean isUserVerified = false;
+	private boolean userIsVerified = false;
 	
 	@ManyToMany(fetch = FetchType.EAGER, cascade = {
 			CascadeType.PERSIST, CascadeType.DETACH,
@@ -58,17 +59,23 @@ public class UserEntity {
 	)
 	private List<RoleEntity> roles;
 	
+	@OneToOne(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	private PasswordResetTokenEntity passwordResetToken;
+	
 	public UserEntity() {
 		
 	}
 
 	public UserEntity(String publicId, String email, String password, String firstName, String lastName) {
-		super();
 		this.publicId = publicId;
 		this.email = email;
 		this.password = password;
 		this.firstName = firstName;
 		this.lastName = lastName;
+	}
+
+	public long getId() {
+		return id;
 	}
 
 	public String getPublicId() {
@@ -136,12 +143,20 @@ public class UserEntity {
 		this.emailVerificationToken = emailVerificationToken;
 	}
 
-	public boolean getIsUserVerified() {
-		return isUserVerified;
+	public boolean getUserIsVerified() {
+		return userIsVerified;
 	}
 
-	public void setIsUserVerified(boolean isUserVerified) {
-		this.isUserVerified = isUserVerified;
+	public void setUserIsVerified(boolean isUserVerified) {
+		this.userIsVerified = isUserVerified;
+	}
+
+	public PasswordResetTokenEntity getPasswordResetToken() {
+		return passwordResetToken;
+	}
+
+	public void setPasswordResetToken(PasswordResetTokenEntity passwordResetToken) {
+		this.passwordResetToken = passwordResetToken;
 	}
 
 	public void addRole(RoleEntity role) {

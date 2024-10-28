@@ -12,7 +12,6 @@ public class UserResponseModel {
 	}
 
 	public UserResponseModel(String publicId, String email, String firstName, String lastName, String joinedAt) {
-		super();
 		this.publicId = publicId;
 		this.email = email;
 		this.firstName = firstName;
