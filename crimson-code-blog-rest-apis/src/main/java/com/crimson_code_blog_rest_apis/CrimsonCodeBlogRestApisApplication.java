@@ -2,10 +2,6 @@ package com.crimson_code_blog_rest_apis;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
 import java.util.UUID;
 
 import org.modelmapper.ModelMapper;
@@ -18,10 +14,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 import com.crimson_code_blog_rest_apis.repository.RoleRepository;
 import com.crimson_code_blog_rest_apis.repository.UserRepository;
-import com.crimson_code_blog_rest_apis.security.JwtAuthenticationFilter;
 import com.crimson_code_blog_rest_apis.entity.RoleEntity;
 import com.crimson_code_blog_rest_apis.entity.UserEntity;
-import com.crimson_code_blog_rest_apis.utils.JwtUtils;
 import com.crimson_code_blog_rest_apis.utils.UserRoles;
 
 import jakarta.transaction.Transactional;

@@ -14,7 +14,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -59,8 +59,8 @@ public class UserEntity {
 	)
 	private List<RoleEntity> roles;
 	
-	@OneToOne(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	private PasswordResetTokenEntity passwordResetToken;
+	@OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	private List<PostEntity> posts;
 	
 	public UserEntity() {
 		
@@ -151,12 +151,12 @@ public class UserEntity {
 		this.userIsVerified = isUserVerified;
 	}
 
-	public PasswordResetTokenEntity getPasswordResetToken() {
-		return passwordResetToken;
+	public List<PostEntity> getPosts() {
+		return posts;
 	}
 
-	public void setPasswordResetToken(PasswordResetTokenEntity passwordResetToken) {
-		this.passwordResetToken = passwordResetToken;
+	public void setPosts(List<PostEntity> posts) {
+		this.posts = posts;
 	}
 
 	public void addRole(RoleEntity role) {
