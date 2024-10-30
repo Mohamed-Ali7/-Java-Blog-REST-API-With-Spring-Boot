@@ -89,14 +89,14 @@ Once the app is up and running, you can access the APIs using **Postman** or any
 	
 - **Refresh:** `/api/auth/refresh`
 	- **Description:** Refreshes the user's access token when it has expired.
-	- **Method:** POST
+	- **Method:** GET
 	- **Protection:** Non-Protected
-  - **Response Body:**
-      ![refresh_token_response](https://github.com/user-attachments/assets/12ef38ce-21fd-4b50-86df-2199a6d238d4)
+    - **Response Body:**
+        ![refresh_token_response](https://github.com/user-attachments/assets/12ef38ce-21fd-4b50-86df-2199a6d238d4)
 
 - **Logout:** `/api/auth/logout`
 	- **Description:** Logs the user out.
-	- **Method:** DELETE
+	- **Method:** POST
 	- **Protection:** Protected
     - **Request Body example:**
         ![logout_request](https://github.com/user-attachments/assets/4670effd-cee4-4152-bd9b-bc8e3dda58d8)
@@ -128,34 +128,33 @@ Once the app is up and running, you can access the APIs using **Postman** or any
 	- **Description:** Retrieves a list of all registered users. Accessible only by admin users.
 	- **Method:** GET
 	- **Protection:** Protected (Admin Only)
-  - **Response Body Example:**
-    ![Get_all_users_response](https://github.com/user-attachments/assets/c9c77fd1-524a-4f7a-b9a5-3e096f4475e3)
+    - **Response Body Example:**
+        ![Get_all_users_response](https://github.com/user-attachments/assets/c9c77fd1-524a-4f7a-b9a5-3e096f4475e3)
 
 
 - **Get Specific User:** `/api/users/{publicId}`
 	- **Description:** Retrieves information about a specific user.
 	- **Method:** GET
 	- **Protection:** Non-Protected
-  - **Response Body Example:**
-    ![Get_user_response](https://github.com/user-attachments/assets/6c6668e4-e53f-458a-bdb4-634de2e8714b)
+    - **Response Body Example:**
+        ![Get_user_response](https://github.com/user-attachments/assets/6c6668e4-e53f-458a-bdb4-634de2e8714b)
 
 
 - **Update Specific User:** `/api/users/{publicId}`
 	- **Description:** Updates the user's information. Users can only update their own data.
 	- **Method:** PUT
 	- **Protection:** Protected
-  - **Request Body example:**
-    ![update_user_request](https://github.com/user-attachments/assets/7eb8cbdc-676b-4027-a46e-aaa729d6364f)
-
-  - **Response Body:**
-    ![Update_user_response](https://github.com/user-attachments/assets/bcd1ada8-6250-4f24-aaeb-b00bbcd4a32b)
+    - **Request Body example:**
+        ![update_user_request](https://github.com/user-attachments/assets/7eb8cbdc-676b-4027-a46e-aaa729d6364f)
+    - **Response Body:**
+        ![Update_user_response](https://github.com/user-attachments/assets/bcd1ada8-6250-4f24-aaeb-b00bbcd4a32b)
 
 - **Delete Specific User:** `/api/users/{publicId}`
 	- **Description:** Deletes a user account. Users can only delete their own account.
 	- **Method:** DELETE
 	- **Protection:** Protected
-  - **Response Body:**
-    ![Delete_user_response](https://github.com/user-attachments/assets/16a9b045-164e-416b-81af-d43abcdc684a)
+    - **Response Body:**
+        ![Delete_user_response](https://github.com/user-attachments/assets/16a9b045-164e-416b-81af-d43abcdc684a)
 
 
 - **Get User's Posts:** `/api/users/{publicId}/posts`
@@ -163,7 +162,7 @@ Once the app is up and running, you can access the APIs using **Postman** or any
 	- **Method:** GET 
 	- **Protection:** Non-Protected
     - **Response Body:**
-    ![Get_user_posts](https://github.com/user-attachments/assets/1d079e32-7860-4367-8981-d220e205fec4)
+        ![Get_user_posts](https://github.com/user-attachments/assets/1d079e32-7860-4367-8981-d220e205fec4)
 
 
 - **Change User's Password:** `/api/users/{publicId}/edit/password`
@@ -171,9 +170,9 @@ Once the app is up and running, you can access the APIs using **Postman** or any
 	- **Method:** PUT 
 	- **Protection:** Protected
 	- **Request Body example:**
-	![Change_user_password_request](https://github.com/user-attachments/assets/96b34813-049a-4a75-a37b-0b034f52c316)
+    	![Change_user_password_request](https://github.com/user-attachments/assets/96b34813-049a-4a75-a37b-0b034f52c316)
     - **Response Body:**
-    ![Change_user_password_response](https://github.com/user-attachments/assets/04c25ede-6d15-4f0f-9fbc-751eaf0b4242)
+        ![Change_user_password_response](https://github.com/user-attachments/assets/04c25ede-6d15-4f0f-9fbc-751eaf0b4242)
 
 ### Post Endpoints
 
@@ -182,40 +181,40 @@ Once the app is up and running, you can access the APIs using **Postman** or any
 	- **Method:** POST
 	- **Protection:** Protected
 	- **Request Body example:**
-	![create_post_request](https://github.com/user-attachments/assets/729374df-a0d8-4691-a5ae-4a1e749bec94)
-  - **Response Body:**
-    ![create_post_response](https://github.com/user-attachments/assets/9d9fe331-aed7-4b2f-aad4-e09e1be7f5b0)
+	    ![create_post_request](https://github.com/user-attachments/assets/729374df-a0d8-4691-a5ae-4a1e749bec94)
+    - **Response Body:**
+        ![create_post_response](https://github.com/user-attachments/assets/9d9fe331-aed7-4b2f-aad4-e09e1be7f5b0)
 
 
 - **Get All Posts:** `/api/posts`
 	- **Description:** Retrieves a list of all posts.
 	- **Method:** GET
 	- **Protection:** Non-Protected
-  - **Response Body:**
-    ![Get_user_posts](https://github.com/user-attachments/assets/53492e7d-4533-4f40-9f78-3ba50c8419bf)
+    - **Response Body:**
+        ![Get_user_posts](https://github.com/user-attachments/assets/53492e7d-4533-4f40-9f78-3ba50c8419bf)
 
 - **Get Specific Post:** `/api/posts/{id}`
 	- **Description:** Retrieves details of a specific post.
 	- **Method:** GET
 	- **Protection:** Non-Protected
-  - **Response Body:**
-    ![get_post_response](https://github.com/user-attachments/assets/bedfb312-7c93-4368-8811-3c70904d98c3)
+    - **Response Body:**
+        ![get_post_response](https://github.com/user-attachments/assets/bedfb312-7c93-4368-8811-3c70904d98c3)
 
 - **Update Specific Post:** `/api/posts/{id}`
 	- **Description:** Updates a specific post. Only the post author can update the post.
 	- **Method:** PUT
 	- **Protection:** Protected
     - **Request Body example:**
-     ![update_post_request](https://github.com/user-attachments/assets/7f29026d-fdd5-4ffd-923a-0edc1c65dc6d)
+        ![update_post_request](https://github.com/user-attachments/assets/7f29026d-fdd5-4ffd-923a-0edc1c65dc6d)
     - **Response Body:**
-    ![update_post_response](https://github.com/user-attachments/assets/8178fd21-7455-4104-9e12-77e2fd69b5af)
+        ![update_post_response](https://github.com/user-attachments/assets/8178fd21-7455-4104-9e12-77e2fd69b5af)
 
 - **Delete Specific Post:** `/api/posts/{id}`
 	- **Description:** Deletes a specific post. Only the post author can delete the post. 
 	- **Method:** DELETE
 	- **Protection:** Protected
-  - **Response Body:**
-    ![delete_post_response](https://github.com/user-attachments/assets/21b1f456-01a3-4b2f-aab1-eed247bc221b)
+    - **Response Body:**
+        ![delete_post_response](https://github.com/user-attachments/assets/21b1f456-01a3-4b2f-aab1-eed247bc221b)
 
 ### Comment Endpoints
 - **Create Comment:** `/api/posts/{post_id}/comments`
@@ -223,9 +222,9 @@ Once the app is up and running, you can access the APIs using **Postman** or any
 	- **Method:** POST
 	- **Protection:** Protected
     - **Request Body example:**
-    ![create_comment_request](https://github.com/user-attachments/assets/4cdf63fe-05cf-42e1-acc3-4a8d7508fdef)
+        ![create_comment_request](https://github.com/user-attachments/assets/4cdf63fe-05cf-42e1-acc3-4a8d7508fdef)
     - **Response Body:**
-    ![create_comment_response](https://github.com/user-attachments/assets/9649039c-180b-42b5-b95a-827de855171f)
+        ![create_comment_response](https://github.com/user-attachments/assets/9649039c-180b-42b5-b95a-827de855171f)
 
 - **Get All Comments:** `/api/posts/{post_id}/comments`
 	- **Description:** Retrieves all comments for a specific post.
@@ -254,6 +253,5 @@ Once the app is up and running, you can access the APIs using **Postman** or any
 	- **Description:** Deletes a specific comment. Only the comment author can delete the comment.
 	- **Method:** DELETE
 	- **Protection:** Protected
-  - **Response Body:**
-    ![delete_comment_response](https://github.com/user-attachments/assets/223c5bd2-9d22-416c-a6ac-cd72d2ad9e12)
-
+    - **Response Body:**
+        ![delete_comment_response](https://github.com/user-attachments/assets/223c5bd2-9d22-416c-a6ac-cd72d2ad9e12)
