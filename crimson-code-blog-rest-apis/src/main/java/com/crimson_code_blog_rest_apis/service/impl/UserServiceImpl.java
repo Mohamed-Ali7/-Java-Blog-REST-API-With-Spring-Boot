@@ -6,6 +6,7 @@ import java.lang.reflect.Type;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
@@ -225,9 +226,18 @@ public class UserServiceImpl implements UserService {
 		
 		List<PostEntity> userPosts = userPostsPage.getContent();
 		
-		Type typeList = new TypeToken<List<PostResponseModel>>() {}.getType();
-		
-		List<PostResponseModel> userPostsResponse = modelMapper.map(userPosts, typeList);
+		List<PostResponseModel> userPostsResponse = userPosts.stream()
+				.map(post -> {
+					PostResponseModel postResponse = new PostResponseModel();
+					
+					postResponse.setId(post.getId());
+					postResponse.setTitle(post.getTitle());
+					postResponse.setContent(post.getContent());
+					postResponse.setUserPublicId(post.getUserPublicId());
+					postResponse.setCreatedAt(dateFormatter.format(post.getCreatedAt()));
+							
+					return postResponse;
+				}).collect(Collectors.toList());
 		
 		return userPostsResponse;
 	}

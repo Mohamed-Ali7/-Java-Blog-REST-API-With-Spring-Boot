@@ -52,6 +52,7 @@ public class SecurityConfig {
 			authorize.requestMatchers("/api/auth/logout").authenticated()
 			.requestMatchers("/api/auth/**").permitAll()
 			.requestMatchers(HttpMethod.GET, "/api/posts/**").permitAll()
+			.requestMatchers(HttpMethod.GET, "/api/users/**").permitAll()
 			.requestMatchers("/api/users/password-reset-request").permitAll()
 			.requestMatchers("/api/users/password-reset").permitAll()
 			.requestMatchers("error").permitAll()
