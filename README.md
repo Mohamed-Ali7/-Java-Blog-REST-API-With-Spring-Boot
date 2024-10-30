@@ -116,8 +116,8 @@ Once the app is up and running, you can access the APIs using **Postman** or any
 	- **Description:** Sends a new email verification to the user's registered email address.
 	- **Method:** POST
 	- **Protection:** Non-Protected
-    - **Request Body example:**
-        ![email_verification_request](https://github.com/user-attachments/assets/9e6e0707-e8bd-4eb5-bb70-29c93923a202)
+	- **Request Body example:**
+		![email_verification_request](https://github.com/user-attachments/assets/9e6e0707-e8bd-4eb5-bb70-29c93923a202)
     - **Response Body:**
         - if email already verified 
             ![email_verification_response_if_email_already_verified](https://github.com/user-attachments/assets/6a385615-565d-4bf8-8c16-59620a008f7f)
@@ -146,9 +146,9 @@ Once the app is up and running, you can access the APIs using **Postman** or any
 	- **Description:** Updates the user's information. Users can only update their own data.
 	- **Method:** PUT
 	- **Protection:** Protected
-    - **Request Body example:**
-        ![update_user_request](https://github.com/user-attachments/assets/7eb8cbdc-676b-4027-a46e-aaa729d6364f)
-    - **Response Body:**
+	- **Request Body example:**
+		![update_user_request](https://github.com/user-attachments/assets/7eb8cbdc-676b-4027-a46e-aaa729d6364f)
+	- **Response Body:**
         ![Update_user_response](https://github.com/user-attachments/assets/bcd1ada8-6250-4f24-aaeb-b00bbcd4a32b)
 
 - **Delete Specific User:** `/api/users/{publicId}`
@@ -163,7 +163,7 @@ Once the app is up and running, you can access the APIs using **Postman** or any
 	- **Description:** Retrieves all posts created by a specific user.
 	- **Method:** GET 
 	- **Protection:** Non-Protected
-    - **Response Body:**
+	- **Response Body:**
         ![Get_user_posts](https://github.com/user-attachments/assets/1d079e32-7860-4367-8981-d220e205fec4)
 
 
@@ -172,8 +172,8 @@ Once the app is up and running, you can access the APIs using **Postman** or any
 	- **Method:** PUT 
 	- **Protection:** Protected
 	- **Request Body example:**
-    	![Change_user_password_request](https://github.com/user-attachments/assets/96b34813-049a-4a75-a37b-0b034f52c316)
-    - **Response Body:**
+		![Change_user_password_request](https://github.com/user-attachments/assets/96b34813-049a-4a75-a37b-0b034f52c316)
+	- **Response Body:**
         ![Change_user_password_response](https://github.com/user-attachments/assets/04c25ede-6d15-4f0f-9fbc-751eaf0b4242)
 
 ### Post Endpoints
@@ -192,8 +192,8 @@ Once the app is up and running, you can access the APIs using **Postman** or any
 	- **Description:** Retrieves a list of all posts.
 	- **Method:** GET
 	- **Protection:** Non-Protected
-    - **Response Body:**
-        ![Get_user_posts](https://github.com/user-attachments/assets/53492e7d-4533-4f40-9f78-3ba50c8419bf)
+	- **Response Body:**
+		![Get_user_posts](https://github.com/user-attachments/assets/53492e7d-4533-4f40-9f78-3ba50c8419bf)
 
 - **Get Specific Post:** `/api/posts/{id}`
 	- **Description:** Retrieves details of a specific post.
